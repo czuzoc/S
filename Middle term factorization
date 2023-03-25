@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int a, c, b, n, i, j;
+    printf("Enter one of the side number (x^2 term)= ");
+    scanf("%d", &a);
+    printf("Enter another of the side number (coeff. term) = ");
+    scanf("%d", &c);
+    printf("Enter the middle number (x term) = ");
+    scanf("%d", &b);
+    if (a == 0) {
+        printf("The middle term factor for quadratic equation cannot work if x^2 = 0. Sorry. <(＿　＿)>");
+        return 1;
+    }
+    if (b * b - 4 * a * c < 0) {
+        printf("Sorry, the roots are complex numbers. (┬┬﹏┬┬);") ;
+        return 1;
+    }
+    n = a * c;
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= n; j++) {
+            if (i * j == n) {
+                if (i + j == c) {
+                    printf("The pair for middle term factor are %d and %d", i, j);
+                    return 0;
+                }
+            }
+        }
+    }
+    return 0;
+}
